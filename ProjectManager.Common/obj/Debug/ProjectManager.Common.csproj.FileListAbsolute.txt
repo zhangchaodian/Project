@@ -1,0 +1,5 @@
+G:\vs code\ProjectManager\ProjectManager.Common\bin\Debug\ProjectManager.Common.dll
+G:\vs code\ProjectManager\ProjectManager.Common\bin\Debug\ProjectManager.Common.pdb
+G:\vs code\ProjectManager\ProjectManager.Common\obj\Debug\ProjectManager.Common.csprojResolveAssemblyReference.cache
+G:\vs code\ProjectManager\ProjectManager.Common\obj\Debug\ProjectManager.Common.dll
+G:\vs code\ProjectManager\ProjectManager.Common\obj\Debug\ProjectManager.Common.pdb

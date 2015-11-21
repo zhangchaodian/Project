@@ -1,0 +1,264 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="~/Content/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/Home.css">
+    <link href="~/Content/dashboard.css" rel="stylesheet">
+    <link rel="icon" href="~/img/favicon.ico">
+    <script src="~/Content/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img src="~/img/logo.png" class="header-logo" alt="Responsive image">
+            <a class="navbar-brand" href="#">科研项目管理系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><span class="header-span">身份:管理员</span></li>
+                <li><span class="header-span">账号:20131003616</span></li>
+                <li><span class="header-span">姓名:王小明</span></li>
+                <li><a href="#">管理入口</a></li>
+                <li><a href="Login">返回登录界面</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="./Home.html">科研项目成果 <span class="sr-only">(current)</span></a></li>
+                <li><a href="UserManager/Project_Schedule">科研项目进度</a></li>
+                <li><a href="./declare.html">科研项目申报</a></li>
+                <li><a href="./Personal_Project.html">个人项目及信息</a></li>
+            </ul>
+        </div>
+
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+            <h2 class="sub-header">已通过审核的科研项目</h2>
+
+            <div class="row search_header">
+                <div class="col-md-7 col-sm-7">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <select class="form-control" name="updownorder">
+                                <optgroup label="通过的审核">
+                                    <option value="asc">审核一</option>
+                                    <option value="asc">审核二</option>
+                                    <option value="asc">审核三</option>
+                                </optgroup>
+                            </select>
+                            <select class="form-control" name="updownorder">
+                                <optgroup label="级别">
+                                    <option value="asc">市级</option>
+                                    <option value="asc">省级</option>
+                                    <option value="asc">国家级</option>
+                                </optgroup>
+                            </select>
+                            <select class="form-control" name="updownorder">
+                                <optgroup label="所属学院">
+                                    <option value="asc">思科</option>
+                                    <option value="asc">金融</option>
+                                    <option value="asc">政管</option>
+                                </optgroup>
+                            </select>
+                            <select class="form-control" name="updownorder">
+                                <optgroup label="按排序类别">
+                                    <option value="asc">按更新时间</option>
+                                    <option value="asc">按编号</option>
+                                </optgroup>
+                            </select>
+                            <select class="form-control" name="updownorder">
+                                <optgroup label="排序">
+                                    <option value="asc">升序</option>
+                                    <option value="asc">降序</option>
+                                </optgroup>
+                            </select>
+                            <button class="btn btn-embossed btn-primary">查询</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-5 col-sm-5">
+                    <form class="form-inline">
+                        <select class="form-control" name="updownorder">
+                            <optgroup label="关键字类型">
+                                <option value="asc">课题类型</option>
+                                <option value="asc">项目名称</option>
+                                <option value="asc">负责人</option>
+                            </optgroup>
+                        </select>
+                        <input type="text" class="form-control" placeholder="输入关键字">
+                        <button class="btn btn-embossed btn-primary">搜索</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>所属学院</th>
+                        <th>课题类型</th>
+                        <th>项目名称</th>
+                        <th>负责人</th>
+                        <th>通过的审核</th>
+                        <th>级别</th>
+                        <th>最近更新时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>思科</td>
+                        <td>IT</td>
+                        <td>某某某项目</td>
+                        <td>张朝钿</td>
+                        <td>审核一</td>
+                        <td>国家级</td>
+                        <td>2015-10-29</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>思科</td>
+                        <td>IT</td>
+                        <td>某某某项目</td>
+                        <td>张朝钿</td>
+                        <td>审核一</td>
+                        <td>国家级</td>
+                        <td>2015-10-29</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>思科</td>
+                        <td>IT</td>
+                        <td>某某某项目</td>
+                        <td>张朝钿</td>
+                        <td>审核一</td>
+                        <td>国家级</td>
+                        <td>2015-10-29</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>思科</td>
+                        <td>IT</td>
+                        <td>某某某项目</td>
+                        <td>张朝钿</td>
+                        <td>审核一</td>
+                        <td>国家级</td>
+                        <td>2015-10-29</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>思科</td>
+                        <td>IT</td>
+                        <td>某某某项目</td>
+                        <td>张朝钿</td>
+                        <td>审核一</td>
+                        <td>国家级</td>
+                        <td>2015-10-29</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>思科</td>
+                        <td>IT</td>
+                        <td>某某某项目</td>
+                        <td>张朝钿</td>
+                        <td>审核一</td>
+                        <td>国家级</td>
+                        <td>2015-10-29</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>思科</td>
+                        <td>IT</td>
+                        <td>某某某项目</td>
+                        <td>张朝钿</td>
+                        <td>审核一</td>
+                        <td>国家级</td>
+                        <td>2015-10-29</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>思科</td>
+                        <td>IT</td>
+                        <td>某某某项目</td>
+                        <td>张朝钿</td>
+                        <td>审核一</td>
+                        <td>国家级</td>
+                        <td>2015-10-29</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>思科</td>
+                        <td>IT</td>
+                        <td>某某某项目</td>
+                        <td>张朝钿</td>
+                        <td>审核一</td>
+                        <td>国家级</td>
+                        <td>2015-10-29</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>思科</td>
+                        <td>IT</td>
+                        <td>某某某项目</td>
+                        <td>张朝钿</td>
+                        <td>审核一</td>
+                        <td>国家级</td>
+                        <td>2015-10-29</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>思科</td>
+                        <td>IT</td>
+                        <td>某某某项目</td>
+                        <td>张朝钿</td>
+                        <td>审核一</td>
+                        <td>国家级</td>
+                        <td>2015-10-29</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>思科</td>
+                        <td>IT</td>
+                        <td>某某某项目</td>
+                        <td>张朝钿</td>
+                        <td>审核一</td>
+                        <td>国家级</td>
+                        <td>2015-10-29</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/holder.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="~/Scripts/ie10-viewport-bug-workaround.js"></script>
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Content/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="~/Scripts/ie-emulation-modes-warning.js"></script>
+</body>
+
+
+</html>

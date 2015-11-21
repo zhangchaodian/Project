@@ -1,0 +1,4 @@
+G:\vs code\ProjectManager\ProjectManager.DAL\bin\Debug\ProjectManager.DAL.dll
+G:\vs code\ProjectManager\ProjectManager.DAL\bin\Debug\ProjectManager.DAL.pdb
+G:\vs code\ProjectManager\ProjectManager.DAL\obj\Debug\ProjectManager.DAL.dll
+G:\vs code\ProjectManager\ProjectManager.DAL\obj\Debug\ProjectManager.DAL.pdb

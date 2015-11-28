@@ -1,0 +1,15 @@
+E:\c#\数据库项目\ProjectManager\LoginUnit\bin\Debug\LoginUnit.dll
+E:\c#\数据库项目\ProjectManager\LoginUnit\bin\Debug\LoginUnit.pdb
+E:\c#\数据库项目\ProjectManager\LoginUnit\bin\Debug\ProjectManager.BLL.dll
+E:\c#\数据库项目\ProjectManager\LoginUnit\bin\Debug\ProjectManager.Model.dll
+E:\c#\数据库项目\ProjectManager\LoginUnit\bin\Debug\ProjectManager.DAL.dll
+E:\c#\数据库项目\ProjectManager\LoginUnit\bin\Debug\EntityFramework.dll
+E:\c#\数据库项目\ProjectManager\LoginUnit\bin\Debug\ProjectManager.BLL.pdb
+E:\c#\数据库项目\ProjectManager\LoginUnit\bin\Debug\ProjectManager.Model.pdb
+E:\c#\数据库项目\ProjectManager\LoginUnit\bin\Debug\ProjectManager.DAL.pdb
+E:\c#\数据库项目\ProjectManager\LoginUnit\bin\Debug\EntityFramework.xml
+E:\c#\数据库项目\ProjectManager\LoginUnit\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\c#\数据库项目\ProjectManager\LoginUnit\obj\Debug\LoginUnit.csprojResolveAssemblyReference.cache
+E:\c#\数据库项目\ProjectManager\LoginUnit\obj\Debug\LoginUnit.dll
+E:\c#\数据库项目\ProjectManager\LoginUnit\obj\Debug\LoginUnit.pdb
+E:\c#\数据库项目\ProjectManager\LoginUnit\bin\Debug\LoginUnit.dll.config

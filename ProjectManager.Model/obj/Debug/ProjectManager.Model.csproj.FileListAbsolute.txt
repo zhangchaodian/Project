@@ -3,3 +3,12 @@ G:\vs code\ProjectManager\ProjectManager.Model\bin\Debug\ProjectManager.Model.pd
 G:\vs code\ProjectManager\ProjectManager.Model\obj\Debug\ProjectManager.Model.csprojResolveAssemblyReference.cache
 G:\vs code\ProjectManager\ProjectManager.Model\obj\Debug\ProjectManager.Model.dll
 G:\vs code\ProjectManager\ProjectManager.Model\obj\Debug\ProjectManager.Model.pdb
+E:\c#\数据库项目\ProjectManager\ProjectManager.Model\bin\Debug\ProjectManager.Model.dll.config
+E:\c#\数据库项目\ProjectManager\ProjectManager.Model\bin\Debug\ProjectManager.Model.dll
+E:\c#\数据库项目\ProjectManager\ProjectManager.Model\bin\Debug\ProjectManager.Model.pdb
+E:\c#\数据库项目\ProjectManager\ProjectManager.Model\bin\Debug\EntityFramework.dll
+E:\c#\数据库项目\ProjectManager\ProjectManager.Model\bin\Debug\EntityFramework.xml
+E:\c#\数据库项目\ProjectManager\ProjectManager.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\c#\数据库项目\ProjectManager\ProjectManager.Model\obj\Debug\ProjectManager.Model.csprojResolveAssemblyReference.cache
+E:\c#\数据库项目\ProjectManager\ProjectManager.Model\obj\Debug\ProjectManager.Model.dll
+E:\c#\数据库项目\ProjectManager\ProjectManager.Model\obj\Debug\ProjectManager.Model.pdb

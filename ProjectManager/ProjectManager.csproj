@@ -126,6 +126,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\User\UserManagerController.cs" />
     <Compile Include="Global.asax.cs">
@@ -222,18 +223,34 @@
     <Content Include="Views\UserManager\Project_Schedule.cshtml" />
     <Content Include="Views\UserManager\Project_Schedule_Each.cshtml" />
     <Content Include="Views\UserManager\Personal_Project.cshtml" />
-    <Content Include="Views\UserManager\declare.cshtml" />
+    <Content Include="Views\UserManager\Project_Declare.cshtml" />
     <Content Include="Views\UserManager\Personal_Project_Abled.cshtml" />
     <Content Include="Views\UserManager\Personal_Project_Disabled.cshtml" />
+    <Content Include="Views\UserManager\test.cshtml" />
+    <Content Include="Views\Admin\Project_Manage.cshtml" />
+    <Content Include="Views\Admin\User_Manage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Admin\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectManager.BLL\ProjectManager.BLL.csproj">
+      <Project>{af6f662b-25b6-4cd3-943f-1498c9e6399f}</Project>
+      <Name>ProjectManager.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectManager.DAL\ProjectManager.DAL.csproj">
+      <Project>{60dfbf69-56fd-4fc9-ae50-577f95557551}</Project>
+      <Name>ProjectManager.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectManager.Model\ProjectManager.Model.csproj">
+      <Project>{99661bdd-d9da-4f90-af90-b1c288887c58}</Project>
+      <Name>ProjectManager.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

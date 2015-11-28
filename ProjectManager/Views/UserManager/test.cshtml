@@ -1,0 +1,38 @@
+﻿@using ProjectManager.DAL;
+@{
+    List<getDefaultProject_Result> projectinfo = (List<getDefaultProject_Result>)ViewBag.ProjectInfo;
+    
+}
+
+<h2>test</h2>
+ <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>所属学院</th>
+                        <th>课题类型</th>
+                        <th>项目名称</th>
+                        <th>负责人</th>
+                        <th>通过的审核</th>
+                        <th>级别</th>
+                        <th>最近更新时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                   @{
+                       foreach (getDefaultProject_Result projectmodel in projectinfo)
+                       {
+                        <tr>
+                        <td>@projectmodel.p_id.ToString()</td>
+                        <td>@projectmodel.project_group.ToString()</td>
+                        <td>@projectmodel.p_type.ToString()</td>
+                        <td>@projectmodel.p_name.ToString()</td>
+                        <td>@projectmodel.st_name.ToString()</td>
+                        <td>@projectmodel.remark.ToString()</td>
+                        <td>@projectmodel.p_rank.ToString()</td>
+                        <td>@projectmodel.plan_closing_time.ToString()</td>
+                    </tr>
+                          }
+                   }
+                    </tbody>
+                </table>

@@ -3,3 +3,15 @@ G:\vs code\ProjectManager\ProjectManager.BLL\bin\Debug\ProjectManager.BLL.pdb
 G:\vs code\ProjectManager\ProjectManager.BLL\obj\Debug\ProjectManager.BLL.csprojResolveAssemblyReference.cache
 G:\vs code\ProjectManager\ProjectManager.BLL\obj\Debug\ProjectManager.BLL.dll
 G:\vs code\ProjectManager\ProjectManager.BLL\obj\Debug\ProjectManager.BLL.pdb
+E:\c#\数据库项目\ProjectManager\ProjectManager.BLL\bin\Debug\ProjectManager.BLL.dll
+E:\c#\数据库项目\ProjectManager\ProjectManager.BLL\bin\Debug\ProjectManager.BLL.pdb
+E:\c#\数据库项目\ProjectManager\ProjectManager.BLL\bin\Debug\ProjectManager.DAL.dll
+E:\c#\数据库项目\ProjectManager\ProjectManager.BLL\bin\Debug\ProjectManager.Model.dll
+E:\c#\数据库项目\ProjectManager\ProjectManager.BLL\bin\Debug\EntityFramework.dll
+E:\c#\数据库项目\ProjectManager\ProjectManager.BLL\bin\Debug\ProjectManager.DAL.pdb
+E:\c#\数据库项目\ProjectManager\ProjectManager.BLL\bin\Debug\ProjectManager.Model.pdb
+E:\c#\数据库项目\ProjectManager\ProjectManager.BLL\bin\Debug\EntityFramework.xml
+E:\c#\数据库项目\ProjectManager\ProjectManager.BLL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\c#\数据库项目\ProjectManager\ProjectManager.BLL\obj\Debug\ProjectManager.BLL.csprojResolveAssemblyReference.cache
+E:\c#\数据库项目\ProjectManager\ProjectManager.BLL\obj\Debug\ProjectManager.BLL.dll
+E:\c#\数据库项目\ProjectManager\ProjectManager.BLL\obj\Debug\ProjectManager.BLL.pdb

@@ -21,7 +21,7 @@
                 task : '任务3',
                 leader : '张朝钿',
                 stime: ['2015','11','5'],
-                etime: ['2015','12','10'],
+                etime: ['2015','12','8'],
             },
             {
                 id : 4,
@@ -45,7 +45,7 @@
         constructor : gantt,
         init : function(){
             var that = this;
-            var gantt_table_tr1 = document.getElementById("gantt_table_tr1");
+            var gantt_table_tr1 = $("#gantt_table_tr1");
                 // gantt_table = document.getElementById("gantt_table");
                 
 
@@ -69,14 +69,14 @@
                         case 0:
                         count_day = etime[2]-stime[2];
                         for(var i=1;i<=count_day+1;i++){
-                            var th_item = document.createElement('th');
+                            var th_item = $("<th>");
                             if (i==etime[2] || i==stime[2]) {
-                                    th_item.innerText = i + '/'+etime[0]+'.'+etime[1];
+                                    th_item.text(i + '/'+etime[0]+'.'+etime[1]);
                                 }
                                 else{
-                                    th_item.innerText = i;
+                                    th_item.text(i);
                                 }
-                                docFragment.appendChild(th_item);
+                                th_item.appendTo(gantt_table_tr1);
                         }
                         break;
                         default:
@@ -108,38 +108,38 @@
                         if(i==stime[1]){
                             D_count_day = count_day-stime[2]+1;
                             for(var s_j=stime[2];s_j<=count_day;s_j++){
-                                var th_item = document.createElement('th');
+                                var th_item = $("<th>");
                                 if (s_j==stime[2] || s_j==count_day) {
-                                    th_item.innerText = s_j+'/'+stime[0]+'.'+stime[1];
+                                    th_item.text(s_j+'/'+stime[0]+'.'+stime[1]);
                                 }
                                 else{
-                                    th_item.innerText = s_j;
+                                    th_item.text(s_j);
                                 }
-                                docFragment.appendChild(th_item);                                
+                                th_item.appendTo(gantt_table_tr1);                                
                             }
                         }
                         else if (i==etime[1]) {
                             for(var e_j=1;e_j<=etime[2];e_j++){
-                                var th_item = document.createElement('th');
+                                var th_item = $("<th>");
                                 if (e_j==etime[2] || e_j==1) {
-                                    th_item.innerText = e_j + '/'+etime[0]+'.'+etime[1];
+                                    th_item.text(e_j + '/'+etime[0]+'.'+etime[1]);
                                 }
                                 else{
-                                    th_item.innerText = e_j;
+                                    th_item.text(e_j);
                                 }
-                                docFragment.appendChild(th_item);
+                                th_item.appendTo(gantt_table_tr1);
                             }
                         }
                         else{
                             for(var j=1;j<=count_day;j++){
-                                var th_item = document.createElement('th');
+                                var th_item = $("<th>");
                                 if (j==1 || j==count_day) {
-                                    th_item.innerText = j+'/'+stime[0]+'.'+i;
+                                    th_item.text(j+'/'+stime[0]+'.'+i);
                                 }
                                 else{
-                                    th_item.innerText = j;
+                                    th_item.text(j);
                                 }
-                                docFragment.appendChild(th_item);
+                                th_item.appendTo(gantt_table_tr1);
                             }
                         }
 
@@ -179,26 +179,26 @@
                         if(i==stime[1]){
                             D_count_day = count_day-stime[2]+1;
                             for(var s_j=stime[2];s_j<=count_day;s_j++){
-                                var th_item = document.createElement('th');
+                                var th_item = $("<th>");
                                 if (s_j==stime[2] || s_j==count_day) {
-                                    th_item.innerText = s_j+'/'+stime[0]+'.'+stime[1];
+                                    th_item.text(s_j+'/'+stime[0]+'.'+stime[1]);
                                 }
                                 else{
-                                    th_item.innerText = s_j;
+                                    th_item.text(s_j);
                                 }
-                                docFragment.appendChild(th_item);                                
+                                th_item.appendTo(gantt_table_tr1);                                
                             }
                         }
                         else{
                             for(var j=1;j<=count_day;j++){
-                                var th_item = document.createElement('th');
+                                var th_item = $("<th>");
                                 if (j==1 || j==count_day) {
-                                    th_item.innerText = j+'/'+stime[0]+'.'+i;
+                                    th_item.text(j+'/'+stime[0]+'.'+i);
                                 }
                                 else{
-                                    th_item.innerText = j;
+                                    th_item.text(j);
                                 }
-                                docFragment.appendChild(th_item);
+                                th_item.appendTo(gantt_table_tr1);
                             }
                         }
                     }
@@ -229,26 +229,26 @@
                         }
                         if (i==etime[1]) {
                             for(var e_j=1;e_j<=etime[2];e_j++){
-                                var th_item = document.createElement('th');
+                                var th_item = $("<th>");
                                 if (e_j==etime[2] || e_j==1) {
-                                    th_item.innerText = e_j + '/'+etime[0]+'.'+etime[1];
+                                    th_item.text(e_j + '/'+etime[0]+'.'+etime[1]);
                                 }
                                 else{
-                                    th_item.innerText = e_j;
+                                    th_item.text(e_j);
                                 }
-                                docFragment.appendChild(th_item);
+                                th_item.appendTo(gantt_table_tr1);
                             }
                         }
                         else{
                             for(var j=1;j<=count_day;j++){
-                                var th_item = document.createElement('th');
+                                var th_item = $("<th>");
                                 if (j==1 || j==count_day) {
-                                    th_item.innerText = j+'/'+etime[0]+'.'+i;
+                                    th_item.text(j+'/'+etime[0]+'.'+i);
                                 }
                                 else{
-                                    th_item.innerText = j;
+                                    th_item.text(j);
                                 }
-                                docFragment.appendChild(th_item);
+                                th_item.appendTo(gantt_table_tr1);
                             }
                         }
 
@@ -285,26 +285,26 @@
                         if(i==stime[1]){
                             D_count_day = count_day-stime[2]+1;
                             for(var s_j=stime[2];s_j<=count_day;s_j++){
-                                var th_item = document.createElement('th');
+                                var th_item = $("<th>");
                                 if (s_j==stime[2] || s_j==count_day) {
-                                    th_item.innerText = s_j+'/'+stime[0]+'.'+stime[1];
+                                    th_item.text(s_j+'/'+stime[0]+'.'+stime[1]);
                                 }
                                 else{
-                                    th_item.innerText = s_j;
+                                    th_item.text(s_j);
                                 }
-                                docFragment.appendChild(th_item);                                
+                                th_item.appendTo(gantt_table_tr1);                                
                             }
                         }
                         else{
                             for(var j=1;j<=count_day;j++){
-                                var th_item = document.createElement('th');
+                                var th_item = $("<th>");
                                 if (j==1 || j==count_day) {
-                                    th_item.innerText = j+'/'+stime[0]+'.'+i;
+                                    th_item.text(j+'/'+stime[0]+'.'+i);
                                 }
                                 else{
-                                    th_item.innerText = j;
+                                    th_item.text(j);
                                 }
-                                docFragment.appendChild(th_item);
+                                th_item.appendTo(gantt_table_tr1);
                             }
                         }
                     }
@@ -337,14 +337,14 @@
                             }
                         }
                         for(var j=1;j<=count_day;j++){
-                                var th_item = document.createElement('th');
+                                var th_item = $("<th>");
                                 if (j==1 || j==count_day) {
-                                    th_item.innerText = j+'/'+realyear+'.'+i;
+                                    th_item.text(j+'/'+realyear+'.'+i);
                                 }
                                 else{
-                                    th_item.innerText = j;
+                                    th_item.text(j);
                                 }
-                                docFragment.appendChild(th_item);
+                                th_item.appendTo(gantt_table_tr1);
                             }
                         
                         
@@ -379,26 +379,26 @@
                         }
                         if (i==etime[1]) {
                             for(var e_j=1;e_j<=etime[2];e_j++){
-                                var th_item = document.createElement('th');
+                                var th_item = $("<th>");
                                 if (e_j==etime[2] || e_j==1) {
-                                    th_item.innerText = e_j + '/'+etime[0]+'.'+etime[1];
+                                    th_item.text(e_j + '/'+etime[0]+'.'+etime[1]);
                                 }
                                 else{
-                                    th_item.innerText = e_j;
+                                    th_item.text(e_j);
                                 }
-                                docFragment.appendChild(th_item);
+                                th_item.appendTo(gantt_table_tr1);
                             }
                         }
                         else{
                             for(var j=1;j<=count_day;j++){
-                                var th_item = document.createElement('th');
+                                var th_item = $("<th>");
                                 if (j==1 || j==count_day) {
-                                    th_item.innerText = j+'/'+stime[0]+'.'+i;
+                                    th_item.text(j+'/'+stime[0]+'.'+i);
                                 }
                                 else{
-                                    th_item.innerText = j;
+                                    th_item.text(j);
                                 }
-                                docFragment.appendChild(th_item);
+                                th_item.appendTo(gantt_table_tr1);
                             }
                         }
                     }
@@ -406,14 +406,14 @@
 
 
                 }
-                gantt_table_tr1.appendChild(docFragment);
+                // gantt_table_tr1.appendChild(docFragment);
                 
             })();
 
 
             //下面函数是生成各个阶段任务进度   
             (function(){
-                var gantt_table = document.getElementById("gantt_table"),
+                var gantt_table = $("#gantt_table"),
                     // count_date_th = gantt_table_tr1_again.length-5,
                     docFragment1 = document.createDocumentFragment(),
                     
@@ -421,16 +421,16 @@
                     // console.log(gantt_table_tr1_again.length);
                 for(var i=that.data.length-1;i>=0;i--){
                     
-                    var table_tr_item = document.createElement('tr');
+                    var table_tr_item = $('<tr>');
                    
                     for (var propName in that.data[i]){
-                        var table_td_item = document.createElement('td');
+                        var table_td_item = $('<td>');
                         if(propName=='stime' || propName=='etime'){
                             var date_str = that.data[i][propName][0]+"-"+that.data[i][propName][1]+"-"+that.data[i][propName][2];
-                            table_td_item.innerText = date_str;
+                            table_td_item.text(date_str);
                         }
-                        else{table_td_item.innerText = that.data[i][propName];}
-                        table_tr_item.appendChild(table_td_item);
+                        else{table_td_item.text(that.data[i][propName]);}
+                        table_td_item.appendTo(table_tr_item);
                     }
                     
                         
@@ -660,24 +660,25 @@
                     //下面是对应上面两个count输出td
                     // console.log(D_count_task_day);
                     for(var n=1;n<=DD_count_task_day-1;n++){
-                        var table_td_item = document.createElement('td');
-                        table_tr_item.appendChild(table_td_item);
+                        var table_td_item = $('<td>');
+                        table_td_item.appendTo(table_tr_item);
                     }
                     // var table_td_item = document.createElement('td');
                     // table_tr_item.appendChild(table_td_item);
-                    var table_td_item = document.createElement('td');
-                    table_td_item.setAttribute("colspan",D_count_task_day);
-                    table_td_item.className = "danger";
+                    var table_td_item = $('<td>');
+                    table_td_item.attr("colspan",D_count_task_day);
+                    table_td_item.addClass('danger');
                     
 
 
 
-                    var task_js_sdate = new Date(that.data[i].stime);
+                    var task_js_sdate = new Date(each_task_s[0],each_task_s[1]-1,each_task_s[2]);
                     
                     var nowdate = new Date();  //当前时间
-                    
-                    var task_js_edate = new Date(that.data[i].etime);
-
+                    nowdate = new Date(nowdate.getFullYear(),nowdate.getMonth(),nowdate.getDate());
+                    console.log(task_js_sdate);
+                    var task_js_edate = new Date(each_task_e[0],each_task_e[1]-1,each_task_e[2]);
+                    console.log(task_js_edate,that.data[i].etime);
                     var D_now_date = nowdate-task_js_sdate;
                     var D_schedule_date = task_js_edate-task_js_sdate;
                     var N_now_date = Math.round(D_now_date/86400000);
@@ -685,32 +686,33 @@
                     var Per_now_date = Math.round((D_now_date/D_schedule_date)*100); 
 
                     var gannt_show_message = '时间已到期';
+                    // console.log(nowdate,task_js_sdate,task_js_edate);
                     if(nowdate>=task_js_edate){
-                        table_td_item.innerHTML = "<a tabindex=\"0\"  role=\"button\" data-toggle=\"popover\" data-placement=\"top\"data-trigger=\"focus\" title=\""+that.data[i].task+"\" data-content=\""+gannt_show_message+"\"><div class='progress' title ='"+gannt_show_message+"' style='cursor:pointer;cursor:hand'><div class='progress-bar progress-bar-danger progress-bar-striped' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 100%;min-width: 2em;'>100%</div></div></a>";
+                        table_td_item.html("<a tabindex=\"0\"  role=\"button\" data-toggle=\"popover\" data-placement=\"top\"data-trigger=\"focus\" title=\""+that.data[i].task+"\" data-content=\""+gannt_show_message+"\"><div class='progress' title ='"+gannt_show_message+"' style='cursor:pointer;cursor:hand'><div class='progress-bar progress-bar-danger progress-bar-striped active progress_move' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 2em;min-width: 2em;'>100%</div></div></a>");
                         
 
                     }
                     else{
-                    if(D_now_date >0){
+                        if(D_now_date >0){
 
-                        if(10*D_now_date < 7*D_schedule_date){
-                        gannt_show_message = ',还未过计划时间的70%';
-                        table_td_item.innerHTML = "<a tabindex=\"0\"  role=\"button\" data-toggle=\"popover\" data-placement=\"top\"data-trigger=\"focus\" title=\""+that.data[i].task+"\" data-content=\"当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"\"><div class='progress'title ='当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"'style='cursor:pointer;cursor:hand'><div class='progress'title ='当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"'style='cursor:pointer;cursor:hand'><div class='progress-bar progress-bar-info progress-bar-striped' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: "+Per_now_date+"%;min-width: 2em'>"+Per_now_date+"%</div></div></a>";
+                            if(10*D_now_date < 7*D_schedule_date){
+                            gannt_show_message = ',还未过计划时间的70%';
+                            table_td_item.html("<a tabindex=\"0\"  role=\"button\" data-toggle=\"popover\" data-placement=\"top\"data-trigger=\"focus\" title=\""+that.data[i].task+"\" data-content=\"当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"\"><div class='progress'title ='当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"'style='cursor:pointer;cursor:hand'><div class='progress'title ='当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"'style='cursor:pointer;cursor:hand'><div class='progress-bar progress-bar-info progress-bar-striped active progress_move' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 2em;min-width: 2em'>"+Per_now_date+"%</div></div></a>");
+                            }
+                            else{
+                                gannt_show_message = ",要抓紧了";
+                                table_td_item.html("<a tabindex=\"0\"  role=\"button\" data-toggle=\"popover\" data-placement=\"top\"data-trigger=\"focus\" title=\""+that.data[i].task+"\" data-content=\"当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"\"><div class='progress'title ='当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"'style='cursor:pointer;cursor:hand'><div class='progress-bar progress-bar-warning progress-bar-striped active progress_move' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 2em;min-width: 2em'>"+Per_now_date+"%</div></div></a>");
+                                // console.log('当前时间进度超过计划时段的70%，抓紧了');
+                            }
                         }
                         else{
-                            gannt_show_message = ",要抓紧了";
-                            table_td_item.innerHTML = "<a tabindex=\"0\"  role=\"button\" data-toggle=\"popover\" data-placement=\"top\"data-trigger=\"focus\" title=\""+that.data[i].task+"\" data-content=\"当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"\"><div class='progress'title ='当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"'style='cursor:pointer;cursor:hand'><div class='progress-bar progress-bar-warning progress-bar-striped' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: "+Per_now_date+"%;min-width: 2em'>"+Per_now_date+"%</div></div></a>";
-                            // console.log('当前时间进度超过计划时段的70%，抓紧了');
+                            N_now_date = 0;
+                            // console.log(D_now_date);
+                            
+                            gannt_show_message = ",未到开始时间";
+                            table_td_item.html("<a tabindex=\"0\"  role=\"button\" data-toggle=\"popover\" data-placement=\"top\"data-trigger=\"focus\" title=\""+that.data[i].task+"\" data-content=\"当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"\"><div class='progress'title ='当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"'style='cursor:pointer;cursor:hand'><div class='progress' title ='当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"'style='cursor:pointer;cursor:hand'><div class='progress-bar progress-bar-info progress-bar-striped' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 0%;min-width: 2em;'>0%</div></div></a>");
+                            // console.log('任务计划还未到进行时间');
                         }
-                    }
-                    else{
-                        N_now_date = 0;
-                        // console.log(D_now_date);
-                        
-                        gannt_show_message = ",未到开始时间";
-                        table_td_item.innerHTML = "<a tabindex=\"0\"  role=\"button\" data-toggle=\"popover\" data-placement=\"top\"data-trigger=\"focus\" title=\""+that.data[i].task+"\" data-content=\"当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"\"><div class='progress'title ='当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"'style='cursor:pointer;cursor:hand'><div class='progress' title ='当前处在计划时间的第"+N_now_date+"天"+gannt_show_message+"'style='cursor:pointer;cursor:hand'><div class='progress-bar progress-bar-info progress-bar-striped' role='progressbar' aria-valuenow='60' aria-valuemin='0' aria-valuemax='100' style='width: 0%;min-width: 2em;'>0%</div></div></a>";
-                        // console.log('任务计划还未到进行时间');
-                    }
                     }
 
 
@@ -719,19 +721,19 @@
 
                     
                      // console.log(table_td_item.getAttribute("colspan"));
-                    table_tr_item.appendChild(table_td_item);
+                    table_td_item.appendTo(table_tr_item);
                      // console.log(table_tr_item);
 
 
-                    var all_date_tr_count = gantt_table_tr1.children.length-5;
+                    var all_date_tr_count = gantt_table_tr1.find("th").length-5;
                     // console.log(all_date_tr_count);
                     for(var left_date_td=1;left_date_td<=all_date_tr_count-D_count_task_day-DD_count_task_day+1;left_date_td++){
-                        var table_td_item = document.createElement('td');
-                        table_tr_item.appendChild(table_td_item);
+                        var table_td_item = $("<td>");
+                        table_td_item.appendTo(table_tr_item);
                     }
                     
 
-                    console.log(table_tr_item);
+                    // console.log(table_tr_item);
                      $("#gantt_table_tr1").after(table_tr_item);
 
                      // console.log(N_now_date);

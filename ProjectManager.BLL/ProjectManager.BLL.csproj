@@ -39,8 +39,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ProjectServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInfoServer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectManager.DAL\ProjectManager.DAL.csproj">
+      <Project>{60dfbf69-56fd-4fc9-ae50-577f95557551}</Project>
+      <Name>ProjectManager.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectManager.Model\ProjectManager.Model.csproj">
+      <Project>{99661bdd-d9da-4f90-af90-b1c288887c58}</Project>
+      <Name>ProjectManager.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

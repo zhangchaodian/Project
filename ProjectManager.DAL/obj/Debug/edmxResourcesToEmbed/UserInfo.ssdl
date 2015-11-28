@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectManagerDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ProjectManagerDBModelStoreContainer">
+    <EntitySet Name="userinfo" EntityType="ProjectManagerDBModel.Store.userinfo" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="userinfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="userPwd" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="sex" Type="varchar" Nullable="false" MaxLength="8" />
+    <Property Name="post" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="mainbox" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="phoneNumber" Type="varchar" MaxLength="20" />
+    <Property Name="userType" Type="varchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <Function Name="Check_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="adminUser" Type="varchar" Mode="In" />
+    <Parameter Name="adminPwd" Type="varchar" Mode="In" />
+  </Function>
+</Schema>

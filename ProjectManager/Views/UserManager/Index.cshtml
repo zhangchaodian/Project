@@ -1,14 +1,24 @@
-﻿
+﻿@using ProjectManager.Model;
+@using ProjectManager.DAL;
+
+@{
+    userinfo UserInfo = (userinfo)ViewBag.UserInfo;
+    List<getDefaultProject_Result> projectinfo = (List<getDefaultProject_Result>)ViewBag.ProjectInfo;
+    ViewBag.Identity=(string)Session["Identity"];
+}
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+     <link rel="stylesheet" type="text/css" href="~/Content/Header.css">
     <link rel="stylesheet" href="~/Content/bootstrap-3.3.5-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="~/Content/Home.css">
     <link href="~/Content/dashboard.css" rel="stylesheet">
     <link rel="icon" href="~/img/favicon.ico">
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
     <script src="~/Content/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+     
 
 </head>
 <body>
@@ -22,16 +32,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <img src="~/img/logo.png" class="header-logo" alt="Responsive image">
+            <img src="../../img/logo.png" class="header-logo" alt="Responsive image">
             <a class="navbar-brand" href="#">科研项目管理系统</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><span class="header-span">身份:管理员</span></li>
-                <li><span class="header-span">账号:20131003616</span></li>
-                <li><span class="header-span">姓名:王小明</span></li>
-                <li><a href="#">管理入口</a></li>
-                <li><a href="Login">返回登录界面</a></li>
+                <li><span class="header-span">身份:@UserInfo.userType</span></li>
+                <li><span class="header-span">账号:@UserInfo.name</span></li>
+                <li><span class="header-span">姓名:@UserInfo.name</span></li>
+                @{
+                    if(ViewBag.Identity=="admin"){
+                <li><a href="../admin/User_Manage">管理入口</a></li>
+                }
+                }
+                <li><a href="~/Login/Logout">返回登录界面</a></li>
             </ul>
 
         </div>
@@ -42,11 +56,12 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="./Home.html">科研项目成果 <span class="sr-only">(current)</span></a></li>
-                <li><a href="UserManager/Project_Schedule">科研项目进度</a></li>
-                <li><a href="./declare.html">科研项目申报</a></li>
-                <li><a href="./Personal_Project.html">个人项目及信息</a></li>
+                <li class="active"><a href="~/UserManager/">科研项目成果 <span class="sr-only">(current)</span></a></li>
+                <li><a href="~/UserManager/Project_Schedule">科研项目进度</a></li>
+                <li><a href="~/UserManager/Project_Declare">科研项目申报</a></li>
+                <li><a href="~/UserManager/Personal_Project">个人项目及信息</a></li>
             </ul>
+
         </div>
 
 
@@ -55,57 +70,44 @@
             <h2 class="sub-header">已通过审核的科研项目</h2>
 
             <div class="row search_header">
-                <div class="col-md-7 col-sm-7">
-                    <form class="form-inline">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <form class="form-inline" style="float: left" action="UserManager/GetSearch " method="post" id="form1">
                         <div class="form-group">
-                            <select class="form-control" name="updownorder">
-                                <optgroup label="通过的审核">
-                                    <option value="asc">审核一</option>
-                                    <option value="asc">审核二</option>
-                                    <option value="asc">审核三</option>
-                                </optgroup>
-                            </select>
-                            <select class="form-control" name="updownorder">
+                            <select class="form-control" name="updownorder2">
                                 <optgroup label="级别">
-                                    <option value="asc">市级</option>
-                                    <option value="asc">省级</option>
-                                    <option value="asc">国家级</option>
+                                    <option value="asc">级别(全部)</option>
+                                    <option value="市级">市级</option>
+                                    <option value="省级">省级</option>
+                                    <option value="国家级">国家级</option>
                                 </optgroup>
                             </select>
-                            <select class="form-control" name="updownorder">
-                                <optgroup label="所属学院">
-                                    <option value="asc">思科</option>
-                                    <option value="asc">金融</option>
-                                    <option value="asc">政管</option>
-                                </optgroup>
-                            </select>
-                            <select class="form-control" name="updownorder">
+                            <select class="form-control" name="updownorder4">
                                 <optgroup label="按排序类别">
-                                    <option value="asc">按更新时间</option>
-                                    <option value="asc">按编号</option>
+                                    <option value="plan_closing_time">按更新时间</option>
+                                    <option value="p_id">按编号</option>
                                 </optgroup>
                             </select>
-                            <select class="form-control" name="updownorder">
+                            <select class="form-control" name="updownorder5">
                                 <optgroup label="排序">
                                     <option value="asc">升序</option>
-                                    <option value="asc">降序</option>
+                                    <option value="desc">降序</option>
                                 </optgroup>
                             </select>
-                            <button class="btn btn-embossed btn-primary">查询</button>
+                            <button class="btn btn-embossed btn-primary" id="btn1">查询</button>
                         </div>
                     </form>
                 </div>
-                <div class="col-md-5 col-sm-5">
-                    <form class="form-inline">
-                        <select class="form-control" name="updownorder">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <form class="form-inline" style="float:left" id="form2" method="post" action="UserManager/GetSearch2">
+                        <select class="form-control" name="updownorder1">
                             <optgroup label="关键字类型">
-                                <option value="asc">课题类型</option>
-                                <option value="asc">项目名称</option>
-                                <option value="asc">负责人</option>
+                                <option value="p_type" selected>课题类型</option>
+                                <option value="p_name">项目名称</option>
+                                <option value="st_name">负责人</option>
                             </optgroup>
                         </select>
-                        <input type="text" class="form-control" placeholder="输入关键字">
-                        <button class="btn btn-embossed btn-primary">搜索</button>
+                        <input type="text" class="form-control" placeholder="输入关键字" name="updownorder2">
+                        <button class="btn btn-embossed btn-primary" id="btn2">搜索</button>
                     </form>
                 </div>
             </div>
@@ -115,136 +117,34 @@
                     <thead>
                     <tr>
                         <th>编号</th>
-                        <th>所属学院</th>
                         <th>课题类型</th>
                         <th>项目名称</th>
+                        <th>申报人</th>
                         <th>负责人</th>
-                        <th>通过的审核</th>
-                        <th>级别</th>
+                        <th>目前级别</th>
                         <th>最近更新时间</th>
+                        <th>操作</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="b1">
+                        @{
+                            foreach(var project in projectinfo){
+                                
                     <tr>
-                        <td>1</td>
-                        <td>思科</td>
-                        <td>IT</td>
-                        <td>某某某项目</td>
-                        <td>张朝钿</td>
-                        <td>审核一</td>
-                        <td>国家级</td>
-                        <td>2015-10-29</td>
+                        <td>@project.p_id</td>
+                        <td>@project.p_type</td>
+                        <td>@project.p_name</td>
+                        <td>@project.st_name</td>
+                        <td>@project.st_name</td>
+                        <td>@project.p_rank</td>
+                        <td>@Convert.ToDateTime(project.plan_closing_time).ToShortDateString()</td>
+
+                        <td><button type="button" class="btn btn-embossed btn-primary btn-xs" data-toggle="modal" data-target="#myModal_ShowDetail">详情</button></td>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>思科</td>
-                        <td>IT</td>
-                        <td>某某某项目</td>
-                        <td>张朝钿</td>
-                        <td>审核一</td>
-                        <td>国家级</td>
-                        <td>2015-10-29</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>思科</td>
-                        <td>IT</td>
-                        <td>某某某项目</td>
-                        <td>张朝钿</td>
-                        <td>审核一</td>
-                        <td>国家级</td>
-                        <td>2015-10-29</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>思科</td>
-                        <td>IT</td>
-                        <td>某某某项目</td>
-                        <td>张朝钿</td>
-                        <td>审核一</td>
-                        <td>国家级</td>
-                        <td>2015-10-29</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>思科</td>
-                        <td>IT</td>
-                        <td>某某某项目</td>
-                        <td>张朝钿</td>
-                        <td>审核一</td>
-                        <td>国家级</td>
-                        <td>2015-10-29</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>思科</td>
-                        <td>IT</td>
-                        <td>某某某项目</td>
-                        <td>张朝钿</td>
-                        <td>审核一</td>
-                        <td>国家级</td>
-                        <td>2015-10-29</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>思科</td>
-                        <td>IT</td>
-                        <td>某某某项目</td>
-                        <td>张朝钿</td>
-                        <td>审核一</td>
-                        <td>国家级</td>
-                        <td>2015-10-29</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>思科</td>
-                        <td>IT</td>
-                        <td>某某某项目</td>
-                        <td>张朝钿</td>
-                        <td>审核一</td>
-                        <td>国家级</td>
-                        <td>2015-10-29</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>思科</td>
-                        <td>IT</td>
-                        <td>某某某项目</td>
-                        <td>张朝钿</td>
-                        <td>审核一</td>
-                        <td>国家级</td>
-                        <td>2015-10-29</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>思科</td>
-                        <td>IT</td>
-                        <td>某某某项目</td>
-                        <td>张朝钿</td>
-                        <td>审核一</td>
-                        <td>国家级</td>
-                        <td>2015-10-29</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>思科</td>
-                        <td>IT</td>
-                        <td>某某某项目</td>
-                        <td>张朝钿</td>
-                        <td>审核一</td>
-                        <td>国家级</td>
-                        <td>2015-10-29</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>思科</td>
-                        <td>IT</td>
-                        <td>某某某项目</td>
-                        <td>张朝钿</td>
-                        <td>审核一</td>
-                        <td>国家级</td>
-                        <td>2015-10-29</td>
-                    </tr>
+                        }
+                        }
+
+
                     </tbody>
                 </table>
             </div>
@@ -252,13 +152,82 @@
     </div>
 </div>
 
+
+<div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="myModal_ShowDetail">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+         <div class="panel panel-default">
+           <div class="panel-heading">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 class="panel-title">申报项目名称</h3>
+           </div>
+           <div class="panel-body">
+             <h5>某某某项目</h5>
+           </div>
+           <div class="panel-heading">
+            <h3 class="panel-title">课题类型</h3>
+           </div>
+           <div class="panel-body">
+             <h5>IT类</h5>
+           </div>
+           <div class="panel-heading">
+            <h3 class="panel-title">申报人</h3>
+           </div>
+           <div class="panel-body">
+             <h5>张朝典</h5>
+           </div>
+           <div class="panel-heading">
+            <h3 class="panel-title">负责人及其联系方式</h3>
+           </div>
+           <div class="panel-body">
+             <h5>姓名:张朝钿, 行政职务:教务主任, 手机号码:159842536, 邮箱:89756458@qq.com</h5>
+           </div>
+           <div class="panel-heading">
+            <h3 class="panel-title">小组成员</h3>
+           </div>
+           <div class="panel-body">
+             <h5>张朝钿,张朝钿,张朝钿,张朝钿,张朝钿</h5>
+           </div>
+           <div class="panel-heading">
+            <h3 class="panel-title">目前级别</h3>
+           </div>
+           <div class="panel-body">
+             <h5>市级</h5>
+           </div>
+           <div class="panel-heading">
+            <h3 class="panel-title">申报时间</h3>
+           </div>
+           <div class="panel-body">
+             <h5>2015-9-5</h5>
+           </div>
+           <div class="panel-heading">
+            <h3 class="panel-title">完成时间</h3>
+           </div>
+           <div class="panel-body">
+             <h5>2015-12-9</h5>
+           </div>
+           <div class="panel-footer clearfix">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="float:right;">关闭</button>
+            </div>
+</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 <script src="~/Scripts/holder.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="~/Scripts/ie10-viewport-bug-workaround.js"></script>
 <script src="~/Scripts/jquery.min.js"></script>
 <script src="~/Content/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 <script src="~/Scripts/ie-emulation-modes-warning.js"></script>
-</body>
+<script src="~/Scripts/Search.js"></script>
+
+ </body>
 
 
 </html>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjectManagerDBModelStoreContainer" CdmEntityContainer="ProjectManagerDBEntities">
+    <EntitySetMapping Name="userinfo">
+      <EntityTypeMapping TypeName="ProjectManagerDBModel.userinfo">
+        <MappingFragment StoreEntitySet="userinfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="userPwd" ColumnName="userPwd" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="post" ColumnName="post" />
+          <ScalarProperty Name="mainbox" ColumnName="mainbox" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Check_Login" FunctionName="ProjectManagerDBModel.Store.Check_Login">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagerDBModel.Check_Login_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="userPwd" ColumnName="userPwd" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="post" ColumnName="post" />
+          <ScalarProperty Name="mainbox" ColumnName="mainbox" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="userType" ColumnName="userType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

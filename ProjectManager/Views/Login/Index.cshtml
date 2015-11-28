@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using ProjectManager.Model;
+
+@{
+    Check_Login_Result userinfo = (Check_Login_Result)ViewBag.UserInfo;
+}
+<!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -24,7 +29,7 @@
         </div>
         <div class="col-md-5 col-sm-5 col-xs-12 login">
             <div class="white-hide"></div>
-            <form class="form-signin login_form">
+            <form class="form-signin login_form" action="~/login/LoginCheck" method="post">
                 <h2 class="form-signin-heading">请登录</h2>
                 <label class="sr-only">用户名</label>
 
@@ -32,7 +37,7 @@
                                                                                                      id="inputEmail"
                                                                                                      class="form-control"
                                                                                                      placeholder="用户名"
-                                                                                                     required autofocus>
+                                                                                                     required autofocus name="user">
                 </p>
                 <label class="sr-only">密码</label>
 
@@ -40,12 +45,12 @@
                                                                                         id="inputPassword"
                                                                                         class="form-control"
                                                                                         placeholder="密码"
-                                                                                        required></span></p>
-                <select class="form-control" required>
+                                                                                        required name="pass"></span></p>
+                <select class="form-control" >
                     <option value="" name="" selected="selected">教职工</option>
                     <option value="" name="">管理员</option>
                 </select>
-                <select class="form-control" required>
+                <select class="form-control" >
                     <option value="" name="" selected="selected">科研项目管理系统</option>
                     <option value="" name="">质量工程项目管理系统</option>
                 </select>

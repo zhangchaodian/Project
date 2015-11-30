@@ -46,11 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Check_Login_Result.cs" />
-    <Compile Include="Project_pass.cs" />
-    <Compile Include="Project_Schedule_Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="userinfo.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

@@ -13,3 +13,15 @@ E:\c#\数据库项目\ProjectManager\LoginUnit\obj\Debug\LoginUnit.csprojResolve
 E:\c#\数据库项目\ProjectManager\LoginUnit\obj\Debug\LoginUnit.dll
 E:\c#\数据库项目\ProjectManager\LoginUnit\obj\Debug\LoginUnit.pdb
 E:\c#\数据库项目\ProjectManager\LoginUnit\bin\Debug\LoginUnit.dll.config
+G:\vs code\ProjectManager\LoginUnit\bin\Debug\LoginUnit.dll.config
+G:\vs code\ProjectManager\LoginUnit\bin\Debug\LoginUnit.dll
+G:\vs code\ProjectManager\LoginUnit\bin\Debug\LoginUnit.pdb
+G:\vs code\ProjectManager\LoginUnit\bin\Debug\ProjectManager.BLL.dll
+G:\vs code\ProjectManager\LoginUnit\bin\Debug\ProjectManager.DAL.dll
+G:\vs code\ProjectManager\LoginUnit\bin\Debug\ProjectManager.Model.dll
+G:\vs code\ProjectManager\LoginUnit\bin\Debug\ProjectManager.BLL.pdb
+G:\vs code\ProjectManager\LoginUnit\bin\Debug\ProjectManager.DAL.pdb
+G:\vs code\ProjectManager\LoginUnit\bin\Debug\ProjectManager.Model.pdb
+G:\vs code\ProjectManager\LoginUnit\obj\Debug\LoginUnit.csprojResolveAssemblyReference.cache
+G:\vs code\ProjectManager\LoginUnit\obj\Debug\LoginUnit.dll
+G:\vs code\ProjectManager\LoginUnit\obj\Debug\LoginUnit.pdb

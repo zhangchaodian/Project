@@ -1,17 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="ProjectManagerDBModel1" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="ProjectManagerDBEntities2" p1:LazyLoadingEnabled="true">
-    <FunctionImport Name="getDefaultProject" ReturnType="Collection(ProjectManagerDBModel1.getDefaultProject_Result)" />
+<Schema Namespace="ProjectManagerDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ProjectManagerDBEntities3" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="project" EntityType="ProjectManagerDBModel.project" />
+    <AssociationSet Name="FK_project_project" Association="ProjectManagerDBModel.FK_project_project">
+      <End Role="project" EntitySet="project" />
+      <End Role="project1" EntitySet="project" />
+    </AssociationSet>
+    <FunctionImport Name="getDefaultProject" ReturnType="Collection(ProjectManagerDBModel.getDefaultProject_Result)" />
   </EntityContainer>
+  <EntityType Name="project">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="personInChargeId" Type="Int32" Nullable="false" />
+    <Property Name="p_name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="state_id" Type="Int32" />
+    <Property Name="rank_id" Type="Int32" />
+    <Property Name="project_group" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="apprval_time" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="plan_closing_time" Type="DateTime" Precision="0" />
+    <Property Name="finish_state" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="project_file_address" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="remark" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+    <Property Name="t_id" Type="Int32" />
+    <Property Name="User_ID" Type="Int32" />
+    <Property Name="p_id" Type="Int32" Nullable="false" />
+    <Property Name="comment_id" Type="Int32" />
+    <NavigationProperty Name="project1" Relationship="ProjectManagerDBModel.FK_project_project" FromRole="project" ToRole="project1" />
+    <NavigationProperty Name="project2" Relationship="ProjectManagerDBModel.FK_project_project" FromRole="project1" ToRole="project" />
+  </EntityType>
+  <Association Name="FK_project_project">
+    <End Role="project" Type="ProjectManagerDBModel.project" Multiplicity="1" />
+    <End Role="project1" Type="ProjectManagerDBModel.project" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="project">
+        <PropertyRef Name="p_id" />
+      </Principal>
+      <Dependent Role="project1">
+        <PropertyRef Name="p_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <ComplexType Name="getDefaultProject_Result">
-    <Property Type="String" Name="p_id" Nullable="false" MaxLength="30" />
-    <Property Type="String" Name="project_group" Nullable="false" MaxLength="256" />
+    <Property Type="Int32" Name="p_id" Nullable="false" />
     <Property Type="String" Name="p_type" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="p_name" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="st_name" Nullable="false" MaxLength="50" />
-    <Property Type="String" Name="remark" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="p_rank" Nullable="false" MaxLength="20" />
     <Property Type="DateTime" Name="plan_closing_time" Nullable="true" />
-    <Property Type="DateTime" Name="apprval_time" Nullable="false" />
   </ComplexType>
 </Schema>

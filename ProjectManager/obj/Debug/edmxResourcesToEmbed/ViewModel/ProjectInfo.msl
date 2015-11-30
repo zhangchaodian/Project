@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProjectManagerDBModelStoreContainer" CdmEntityContainer="ProjectManagerDBEntities">
+    <EntitySetMapping Name="project">
+      <EntityTypeMapping TypeName="ProjectManagerDBModel.project">
+        <MappingFragment StoreEntitySet="project">
+          <ScalarProperty Name="personInChargeId" ColumnName="personInChargeId" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="rank_id" ColumnName="rank_id" />
+          <ScalarProperty Name="project_group" ColumnName="project_group" />
+          <ScalarProperty Name="apprval_time" ColumnName="apprval_time" />
+          <ScalarProperty Name="plan_closing_time" ColumnName="plan_closing_time" />
+          <ScalarProperty Name="finish_state" ColumnName="finish_state" />
+          <ScalarProperty Name="project_file_address" ColumnName="project_file_address" />
+          <ScalarProperty Name="remark" ColumnName="remark" />
+          <ScalarProperty Name="t_id" ColumnName="t_id" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="comment_id" ColumnName="comment_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getDefaultProject" FunctionName="ProjectManagerDBModel.Store.getDefaultProject">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProjectManagerDBModel.getDefaultProject_Result">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="p_type" ColumnName="p_type" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="p_rank" ColumnName="p_rank" />
+          <ScalarProperty Name="plan_closing_time" ColumnName="plan_closing_time" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

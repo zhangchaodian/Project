@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ProjectManager.Model;
+using System.Web.Services;
 
 namespace ProjectManager.Controllers.User
 {
@@ -12,7 +13,7 @@ namespace ProjectManager.Controllers.User
     {
         //
         // GET: /UserManager/
-    List<DAL.getDefaultProject_Result> projectInfo =new  List<DAL.getDefaultProject_Result>();
+   
     
     
 
@@ -20,12 +21,12 @@ namespace ProjectManager.Controllers.User
 [Authorize]
 public ActionResult index()
     {
-        Model.userinfo userInfo = (userinfo)Session["userinfo"];
+        Model.User userInfo = (Model.User)Session["userinfo"];
         ViewBag.UserInfo = userInfo;
        // ViewBag.user = User.Identity.Name; 
-        projectInfo = DAL.ProjectInfoDAL.getProject_pass_Info();
+       // projectInfo = DAL.ProjectInfoDAL.getProject_pass_Info();
         //projectInfo = (from rerult in projectInfo where (rerult.remark.Equals("审核一") && rerult.p_rank.Equals("国家级")) select rerult).ToList();
-        ViewBag.ProjectInfo = projectInfo;
+       // ViewBag.ProjectInfo = projectInfo;
         return View();
     }
     #endregion
@@ -45,7 +46,8 @@ public ActionResult index()
         return Content(htmlstr);
     }
          * */
-        #region  搜索处理1，返回json数据
+       /* #region  搜索处理1，返回json数据
+        
         public JsonResult GetSearch()
         {
             string str1 = Request.Form["updownorder1"];
@@ -77,8 +79,15 @@ public ActionResult index()
             return Json(htmlstr, JsonRequestBehavior.AllowGet);
         }
         #endregion
-
-
+        */
+        #region 详情index页面返回json数据
+        [WebMethod]
+        public  JsonResult GetDetail()
+        {
+            string str = "{ \"p_name\": \"挑战杯\", \"type\": \"竞赛\", \"st_name\": \"张朝钿\", \"st_detail\": \"姓名:张朝钿, 行政职务:教务主任, 手机号码:159842536, 邮箱:89756458@qq.com\", \"gtoup\": \"zx chaodian\", \"rank\": \"国家级\", \"s_time\": \"2015-1-1\", \"f_time\": \"2015-12-1\"}";
+            return Json(str, JsonRequestBehavior.AllowGet);
+        }
+        #endregion
 
         [Authorize]
         public ActionResult Project_Schedule_Each()
@@ -91,9 +100,9 @@ public ActionResult index()
         public ActionResult Project_Schedule()
         {
             ViewBag.user = User.Identity.Name;
-            List<Model.Project_Schedule_Model> s_model = new List<Project_Schedule_Model>();
-            s_model = BLL.ProjectServer.getScheduleModel();
-            ViewBag.s_model = s_model;
+            //List<Model.Project_Schedule_Model> s_model = new List<Project_Schedule_Model>();
+           // s_model = BLL.ProjectServer.getScheduleModel();
+            //ViewBag.s_model = s_model;
             return View("Project_Schedule");
         }
         [Authorize]

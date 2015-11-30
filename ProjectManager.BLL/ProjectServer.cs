@@ -11,6 +11,8 @@ namespace ProjectManager.BLL
         /*
         public Model.Project_pass getProject_pass(){
         }*/
+
+        /*
         #region 获取搜索数据模型1
         public static List<DAL.getDefaultProject_Result> getSearchResult(List<DAL.getDefaultProject_Result> projectInfo, string str2, string str4, string str5)
         {
@@ -65,8 +67,8 @@ namespace ProjectManager.BLL
                 htmlStr.Append("<td>"+project.p_id+"</td>");
                 htmlStr.Append("<td>"+project.p_type+"</td>");
                 htmlStr.Append("<td>" + project.p_name + "</td>");
-                htmlStr.Append("<td>" + project.st_name + "</td>");
-                htmlStr.Append("<td>"+project.st_name+"</td>");
+                htmlStr.Append("<td>" + project.name + "</td>");
+                htmlStr.Append("<td>"+project.name+"</td>");
                 htmlStr.Append("<td>" + project.p_rank + "</td>");
                 htmlStr.Append("<td>" + project.plan_closing_time + "</td>");
                 htmlStr.Append(" <td><button type=\"button\" class=\"btn btn-embossed btn-primary btn-xs\" data-toggle=\"modal\" data-target=\"#myModal_ShowDetail\">详情</button></td>");
@@ -91,7 +93,7 @@ namespace ProjectManager.BLL
                  projectInfo=(from result in projectInfo where result.p_name.Contains(keyword) select result).ToList();
                  break;
                 case "st_name":
-                   projectInfo=(from result in projectInfo where result.st_name.Contains(keyword) select result).ToList();
+                   projectInfo=(from result in projectInfo where result.name.Contains(keyword) select result).ToList();
                  break;
             }
             return projectInfo;
@@ -108,5 +110,7 @@ namespace ProjectManager.BLL
 
         #endregion
 
+    } */
     }
 }
+       

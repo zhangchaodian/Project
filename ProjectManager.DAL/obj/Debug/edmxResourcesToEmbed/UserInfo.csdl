@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="ProjectManagerDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="ProjectManagerDBEntities" p1:LazyLoadingEnabled="true">
+  <EntityContainer Name="ProjectManagerDBEntities2" p1:LazyLoadingEnabled="true">
     <EntitySet Name="userinfo" EntityType="ProjectManagerDBModel.userinfo" />
     <FunctionImport Name="Check_Login" ReturnType="Collection(ProjectManagerDBModel.Check_Login_Result)">
       <Parameter Name="adminUser" Mode="In" Type="String" />
@@ -11,22 +11,22 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="userPwd" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
     <Property Name="name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="sex" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
     <Property Name="post" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
-    <Property Name="mainbox" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
     <Property Name="phoneNumber" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
     <Property Name="userType" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
   </EntityType>
   <ComplexType Name="Check_Login_Result">
-    <Property Type="String" Name="ID" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="String" Name="userPwd" Nullable="false" MaxLength="20" />
     <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
     <Property Type="String" Name="sex" Nullable="false" MaxLength="8" />
     <Property Type="String" Name="post" Nullable="false" MaxLength="20" />
-    <Property Type="String" Name="mainbox" Nullable="false" MaxLength="30" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="30" />
     <Property Type="String" Name="phoneNumber" Nullable="true" MaxLength="20" />
     <Property Type="String" Name="userType" Nullable="false" MaxLength="20" />
   </ComplexType>

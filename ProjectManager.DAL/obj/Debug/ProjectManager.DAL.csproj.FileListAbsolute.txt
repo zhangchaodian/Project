@@ -13,3 +13,10 @@ E:\c#\数据库项目\ProjectManager\ProjectManager.DAL\obj\Debug\ProjectManager
 E:\c#\数据库项目\ProjectManager\ProjectManager.DAL\obj\Debug\ProjectManager.DAL.pdb
 E:\c#\数据库项目\ProjectManager\ProjectManager.DAL\bin\Debug\ProjectManager.Model.dll
 E:\c#\数据库项目\ProjectManager\ProjectManager.DAL\bin\Debug\ProjectManager.Model.pdb
+G:\vs code\ProjectManager\ProjectManager.DAL\bin\Debug\ProjectManager.DAL.dll.config
+G:\vs code\ProjectManager\ProjectManager.DAL\bin\Debug\EntityFramework.dll
+G:\vs code\ProjectManager\ProjectManager.DAL\bin\Debug\ProjectManager.Model.dll
+G:\vs code\ProjectManager\ProjectManager.DAL\bin\Debug\ProjectManager.Model.pdb
+G:\vs code\ProjectManager\ProjectManager.DAL\bin\Debug\EntityFramework.xml
+G:\vs code\ProjectManager\ProjectManager.DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+G:\vs code\ProjectManager\ProjectManager.DAL\obj\Debug\ProjectManager.DAL.csprojResolveAssemblyReference.cache

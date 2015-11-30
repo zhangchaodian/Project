@@ -13,13 +13,14 @@ namespace ProjectManager.BLL
        #region 登录匹配
        public static int CheckLogin(string username,string pwd)
        {
-           Login lo = new Login();
-           List<Check_Login_Result> user ;
-           user = lo.Check(username,pwd);//获取用户数据
-           if (user.Count() > 0)
+           UserInfoDAL info = new UserInfoDAL();
+           User user ;
+           user = info.Check(username,pwd);//获取用户数据
+           if (user!=null)
            {
-               string usertype=(from u in user select u.userType).First();
-               if(usertype.Equals("admin")){
+               //a教职工，b管理员
+               string usertype = user.type;
+               if(usertype.Equals("a")){
                    return 0;
                }
                else{
@@ -35,9 +36,9 @@ namespace ProjectManager.BLL
 
 
        #region 获取用户数据
-       public static userinfo getUser(string name,string pass){
+       public User getUserInfo(string name,string pass){
            DAL.UserInfoDAL info = new DAL.UserInfoDAL();
-           Model.userinfo user= info.GetUserInfo(name,pass);
+           User user= info.GetUserInfo(name,pass);
            return user;
        }
        #endregion

@@ -11,9 +11,9 @@ namespace ProjectManager.DAL
 {
   public  class UserInfoDAL
     {
-      public userinfo GetUserInfo(string name,string pass)
+      public User GetUserInfo(string name,string pass)
       {
-          string sql = "select* from userinfo where name=@username and userPwd=@pwd";
+          string sql = "select * from [User] where nickname=@username and pwd=@pwd;";
           SqlParameter[] pars ={ 
                                  new SqlParameter("@username",SqlDbType.NVarChar,32),
                                  new SqlParameter("@pwd",SqlDbType.NVarChar,32),
@@ -21,25 +21,33 @@ namespace ProjectManager.DAL
           pars[0].Value = name;
           pars[1].Value = pass;
           DataTable da = SqlHelper.GetTable(sql, CommandType.Text, pars);
-          userinfo userInfo = null;
+          User userInfo = null;
           if (da.Rows.Count > 0)
           {
-              userInfo = new userinfo();
+              userInfo = new User();
               LoadEntity(userInfo, da.Rows[0]);
           }
           return userInfo;
 
       }
-      public void LoadEntity(userinfo userInfo, DataRow row)
+      public void LoadEntity(User userInfo, DataRow row)
       {
-          userInfo.ID = row["ID"].ToString();
-          userInfo.mainbox = row["mainbox"].ToString();
-          userInfo.name = row["name"].ToString();
-          userInfo.phoneNumber = row["phoneNumber"].ToString();
+          userInfo.ID = Convert.ToInt16(row["ID"]);
+          userInfo.email= row["email"].ToString();
+          userInfo.nickname = row["nickname"].ToString();
+          userInfo.phone= row["phone"].ToString();
           userInfo.sex = row["sex"].ToString();
-          userInfo.userType=row["userType"].ToString();
+          userInfo.belongs=row["belongs"].ToString();
+          userInfo.position = row["position"].ToString();
+          userInfo.type = row["type"].ToString();
           
 
+      }
+
+      public User Check(string username, string password)
+      {
+          UserInfoDAL user = new UserInfoDAL();
+          return user.GetUserInfo(username, password);
       }
     }
 }

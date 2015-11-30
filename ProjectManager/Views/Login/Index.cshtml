@@ -1,8 +1,6 @@
 ﻿@using ProjectManager.Model;
 
-@{
-    Check_Login_Result userinfo = (Check_Login_Result)ViewBag.UserInfo;
-}
+
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -50,9 +48,9 @@
                     <option value="" name="" selected="selected">教职工</option>
                     <option value="" name="">管理员</option>
                 </select>
-                <select class="form-control" >
-                    <option value="" name="" selected="selected">科研项目管理系统</option>
-                    <option value="" name="">质量工程项目管理系统</option>
+                <select class="form-control" name="p_belongs">
+                    <option value="a" name="" selected="selected">科研项目管理系统</option>
+                    <option value="b" name="">质量工程项目管理系统</option>
                 </select>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
             </form>

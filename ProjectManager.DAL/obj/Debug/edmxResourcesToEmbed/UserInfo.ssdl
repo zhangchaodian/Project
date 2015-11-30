@@ -7,12 +7,12 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="ID" Type="int" Nullable="false" />
     <Property Name="userPwd" Type="varchar" Nullable="false" MaxLength="20" />
     <Property Name="name" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="sex" Type="varchar" Nullable="false" MaxLength="8" />
     <Property Name="post" Type="varchar" Nullable="false" MaxLength="20" />
-    <Property Name="mainbox" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="email" Type="varchar" Nullable="false" MaxLength="30" />
     <Property Name="phoneNumber" Type="varchar" MaxLength="20" />
     <Property Name="userType" Type="varchar" Nullable="false" MaxLength="20" />
   </EntityType>

@@ -19,11 +19,11 @@ namespace ProjectManager.Controllers
         #region 登录验证
         public ActionResult LoginCheck()
         {
-            string user=Request["user"];
+            string id=Request["user"];
             string pass=Request["pass"];
             string p_belongs=Request["p_belongs"];
             Session["p_belongs"] = p_belongs.Equals("a") ? "科研项目管理系统" : "质量工程项目管理系统";
-            int result= BLL.UserInfoServer.CheckLogin(user,pass);
+            int result= BLL.UserInfoServer.CheckLogin(id,pass);
            
 
             if (result < 0)
@@ -32,9 +32,9 @@ namespace ProjectManager.Controllers
             }
             else
             {
-                FormsAuthentication.SetAuthCookie(user, false);
+                FormsAuthentication.SetAuthCookie(id, false);
                 BLL.UserInfoServer server = new BLL.UserInfoServer();
-                Model.User u = server.getUserInfo(user,pass);
+                Model.User u = server.getUserInfo(id,pass);
                  Session["userinfo"] = u;
                //a代表管理员 b用户
                 if (result == 0)

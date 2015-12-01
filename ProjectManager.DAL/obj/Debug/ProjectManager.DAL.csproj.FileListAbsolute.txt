@@ -20,3 +20,14 @@ G:\vs code\ProjectManager\ProjectManager.DAL\bin\Debug\ProjectManager.Model.pdb
 G:\vs code\ProjectManager\ProjectManager.DAL\bin\Debug\EntityFramework.xml
 G:\vs code\ProjectManager\ProjectManager.DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
 G:\vs code\ProjectManager\ProjectManager.DAL\obj\Debug\ProjectManager.DAL.csprojResolveAssemblyReference.cache
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.DAL\bin\Debug\ProjectManager.DAL.dll.config
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.DAL\bin\Debug\ProjectManager.DAL.dll
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.DAL\bin\Debug\ProjectManager.DAL.pdb
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.DAL\bin\Debug\EntityFramework.dll
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.DAL\bin\Debug\ProjectManager.Model.dll
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.DAL\bin\Debug\ProjectManager.Model.pdb
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.DAL\bin\Debug\EntityFramework.xml
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.DAL\obj\Debug\ProjectManager.DAL.csprojResolveAssemblyReference.cache
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.DAL\obj\Debug\ProjectManager.DAL.dll
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.DAL\obj\Debug\ProjectManager.DAL.pdb

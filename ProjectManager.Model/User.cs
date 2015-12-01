@@ -9,7 +9,7 @@ namespace ProjectManager.Model
 {
    public class User
     {
-       public int ID { get; set; }
+       public long ID { get; set; }
        public string pwd { get; set; }
        public string nickname { get; set; }
        public string sex { get; set; }

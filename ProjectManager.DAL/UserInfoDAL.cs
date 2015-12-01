@@ -13,7 +13,7 @@ namespace ProjectManager.DAL
     {
       public User GetUserInfo(string name,string pass)
       {
-          string sql = "select * from [User] where nickname=@username and pwd=@pwd;";
+          string sql = "select * from [User] where ID=@username and pwd=@pwd;";
           SqlParameter[] pars ={ 
                                  new SqlParameter("@username",SqlDbType.NVarChar,32),
                                  new SqlParameter("@pwd",SqlDbType.NVarChar,32),
@@ -32,7 +32,7 @@ namespace ProjectManager.DAL
       }
       public void LoadEntity(User userInfo, DataRow row)
       {
-          userInfo.ID = Convert.ToInt16(row["ID"]);
+          userInfo.ID = Convert.ToInt64(row["ID"]);
           userInfo.email= row["email"].ToString();
           userInfo.nickname = row["nickname"].ToString();
           userInfo.phone= row["phone"].ToString();

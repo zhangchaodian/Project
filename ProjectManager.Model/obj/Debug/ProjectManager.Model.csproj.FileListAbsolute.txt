@@ -16,3 +16,12 @@ G:\vs code\ProjectManager\ProjectManager.Model\bin\Debug\ProjectManager.Model.dl
 G:\vs code\ProjectManager\ProjectManager.Model\bin\Debug\EntityFramework.dll
 G:\vs code\ProjectManager\ProjectManager.Model\bin\Debug\EntityFramework.xml
 G:\vs code\ProjectManager\ProjectManager.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.Model\bin\Debug\ProjectManager.Model.dll.config
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.Model\bin\Debug\ProjectManager.Model.dll
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.Model\bin\Debug\ProjectManager.Model.pdb
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.Model\bin\Debug\EntityFramework.dll
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.Model\bin\Debug\EntityFramework.xml
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.Model\obj\Debug\ProjectManager.Model.csprojResolveAssemblyReference.cache
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.Model\obj\Debug\ProjectManager.Model.dll
+G:\vs code\ProjectManager\ProjectManager\ProjectManager.Model\obj\Debug\ProjectManager.Model.pdb

@@ -209,7 +209,9 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -235,6 +237,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Model\" />
+    <Folder Include="Upload\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
@@ -244,6 +247,10 @@
     <ProjectReference Include="..\ProjectManager.BLL\ProjectManager.BLL.csproj">
       <Project>{af6f662b-25b6-4cd3-943f-1498c9e6399f}</Project>
       <Name>ProjectManager.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectManager.Common\ProjectManager.Common.csproj">
+      <Project>{78b4a2c5-f3af-4444-8b6c-65e23196b237}</Project>
+      <Name>ProjectManager.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\ProjectManager.DAL\ProjectManager.DAL.csproj">
       <Project>{60dfbf69-56fd-4fc9-ae50-577f95557551}</Project>

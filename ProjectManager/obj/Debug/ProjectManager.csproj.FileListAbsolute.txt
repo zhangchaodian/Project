@@ -115,3 +115,5 @@ G:\vs code\ProjectManager\ProjectManager\ProjectManager\bin\zh-Hans\System.Web.W
 G:\vs code\ProjectManager\ProjectManager\ProjectManager\obj\Debug\ProjectManager.csprojResolveAssemblyReference.cache
 G:\vs code\ProjectManager\ProjectManager\ProjectManager\obj\Debug\ProjectManager.dll
 G:\vs code\ProjectManager\ProjectManager\ProjectManager\obj\Debug\ProjectManager.pdb
+G:\vs code\ProjectManager\ProjectManager\ProjectManager\bin\ProjectManager.Common.dll
+G:\vs code\ProjectManager\ProjectManager\ProjectManager\bin\ProjectManager.Common.pdb

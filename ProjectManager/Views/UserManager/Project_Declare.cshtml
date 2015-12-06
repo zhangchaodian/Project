@@ -57,7 +57,7 @@
 
 
             <div class="col-md-11 col-sm-11">
-                <form class="form-horizontal" role="form">
+                <form class="form-horizontal" role="form" action="~/UserManager/getDeclareInfo" method="post" enctype="multipart/form-data">
                   <div id="form_container_first">
                    <h3 style="margin-bottom: 25px">第一步:项目基本资料填录</h3>
                   <div class="row">
@@ -68,7 +68,7 @@
                       <div class="col-sm-10 col-md-7">
                         <div class="input-group">
                          <input type="text" class="form-control" id="project_name"
-                            placeholder="请输入项目名称">
+                            placeholder="请输入项目名称" name="project_name">
                          <div class="input-group-addon">
                             <span class="glyphicon glyphicon-book text-primary"></span>
                          </div>
@@ -89,7 +89,7 @@
                       <label for="lastname" class="col-sm-2 control-label">项目负责人</label>
                       <div class="col-sm-10 col-md-7">
                         <div class="input-group">
-                         <input type="text" class="form-control"   placeholder="请输入项目负责人姓名" id="mainer_name">
+                         <input type="text" class="form-control"   placeholder="请输入项目负责人姓名" id="mainer_name" name="mainer_name">
                          <div class="input-group-addon">
                             <span class="glyphicon glyphicon-user text-primary"></span>
                          </div>   
@@ -108,7 +108,7 @@
                       <div class="col-sm-10 col-md-7">
                         <div class="input-group">
                          <input type="text" class="form-control" id="mainer_phone" 
-                            placeholder="请输入负责人手机号码">
+                            placeholder="请输入负责人手机号码" name="mainer_phone">
                           <div class="input-group-addon">
                             <span class="glyphicon glyphicon-earphone text-primary"></span>
                          </div>
@@ -127,7 +127,7 @@
                       <div class="col-sm-10 col-md-7">
                         <div class="input-group">
                          <input type="text" class="form-control" id="mainer_email" 
-                            placeholder="请输入项目负责人邮箱">
+                            placeholder="请输入项目负责人邮箱" name="mainer_email">
                           <div class="input-group-addon">
                             <span class="glyphicon glyphicon-envelope text-primary"></span>
                          </div>
@@ -149,7 +149,7 @@
                           <div class="col-md-4 col-sm-4 col-xs-4">
                             <div class="input-group">
                             <input type="text" class="form-control" id="Auto_Mainer_Name" 
-                                placeholder="负责人姓名" readonly>
+                                placeholder="负责人姓名" readonly name="member">
                              <div class="input-group-addon">
                             <span class="glyphicon glyphicon-user text-primary"></span>
                             </div>   
@@ -181,7 +181,7 @@
                       <div class="col-sm-4 col-md-3">
                         <div class="input-group">
                          <input type="text" class="form-control" id="project_sort" 
-                            placeholder="请输入课题类型">
+                            placeholder="请输入课题类型" name="p_type">
                          <div class="input-group-addon">
                             <span class="glyphicon glyphicon-flag text-primary"></span>
                          </div>   
@@ -200,10 +200,10 @@
                       <label for="lastname" class="col-sm-2 control-label">所处级别</label>
                       <div class="col-sm-4 col-md-3">
                         <div class="input-group">
-                         <select class="form-control input-sm" id="Now_Level">
-                           <option selected="selected" value="0">校级</option>
-                           <option value="1">市级</option>
-                           <option value="2">省级</option>
+                         <select class="form-control input-sm" id="Now_Level" name="now_level">
+                           <option selected="selected" value="a">校级</option>
+                           <option value="b">市级</option>
+                           <option value="c">省级</option>
                          </select>
                          <div class="input-group-addon">
                             <span class="glyphicon glyphicon-sort text-primary"></span>
@@ -223,10 +223,10 @@
                       <label for="lastname" class="col-sm-2 control-label">目标级别</label>
                       <div class="col-sm-4 col-md-3">
                         <div class="input-group">
-                         <select class="form-control input-sm" id="Target_Level">
-                           <option  selected="selected" value="1">市级</option>
-                           <option value="2">省级</option>
-                           <option value="3">国家级</option>
+                         <select class="form-control input-sm" id="Target_Level" name="target_level" >
+                           <option  selected="selected" value="b">市级</option>
+                           <option value="c">省级</option>
+                           <option value="d">国家级</option>
                          </select>
                          <div class="input-group-addon">
                             <span class="glyphicon glyphicon-sort text-primary"></span>
@@ -246,7 +246,7 @@
                       <label for="lastname" class="col-sm-2 control-label">项目起始时间</label>
                       <div class="col-sm-4 col-md-3">
                          <div class="input-group date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                          <input class="form-control" size="16" type="text" value="" id="project_start_time" placeholder="请选择时间" readonly>
+                          <input class="form-control" size="16" type="text" value="" id="project_start_time" placeholder="请选择时间" readonly name="s_time">
                           <span class="input-group-addon"><span class="glyphicon glyphicon-calendar text-primary"></span></span>
                         </div>
                         <input type="hidden" id="dtp_input2" value="" />
@@ -265,7 +265,7 @@
                       <label for="lastname" class="col-sm-2 control-label">项目结束时间</label>
                       <div class="col-sm-4 col-md-3">
                          <div class="input-group date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                          <input class="form-control" size="16" type="text" value="" id="project_end_time" placeholder="请选择时间" readonly>
+                          <input class="form-control" size="16" type="text" value="" id="project_end_time" placeholder="请选择时间" readonly name="f_time">
                           <span class="input-group-addon"><span class="glyphicon glyphicon-calendar text-primary"></span></span>
                         </div>
                         <input type="hidden" id="dtp_input2" value="" />
@@ -284,7 +284,7 @@
                       <div class="col-sm-6 col-md-4">
                         <div class="input-group">
                          <input type="text" class="form-control" id="project_money" 
-                            placeholder="请输入项目经费预算">
+                            placeholder="请输入项目经费预算" name="money">
                          <div class="input-group-addon">
                             <span class="text-primary">RMB</span>
                          </div>   
@@ -321,7 +321,7 @@
                          <div class="col-md-1"></div>
                          <div class="col-md-11">
                           <h4>开题报告word文档上传</h4>
-                            <input id="file0" class="file1" type="file">
+                            <input id="file0" class="file1" type="file" name="report_file">
                          </div>   
                       </div>
                     </div>
@@ -330,7 +330,7 @@
                          <div class="col-md-1"></div>
                          <div class="col-md-11">
                           <h4>论文材料word文档上传</h4>
-                            <input id="file1" class="file1" type="file">
+                            <input id="file1" class="file1" type="file" name="paper_file">
                          </div>   
                       </div>
                     </div>
@@ -339,7 +339,7 @@
                          <div class="col-md-1"></div>
                          <div class="col-md-11">
                           <h4>项目完整材料打包上传</h4>
-                            <input id="file2" class="file2" type="file">
+                            <input id="file2" class="file2" type="file" name="whole_file">
                          </div>   
                       </div>
                     </div>
@@ -361,15 +361,15 @@
                       <div class="row task_is_time" >
                           <label for="lastname" class="col-sm-2 col-md-2 col-xs-12 control-label">阶段任务</label>
                           <div class="col-md-2 col-sm-2 col-xs-3">
-                            <div class="input-group date task_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                              <input class="form-control task_is_empty task_is_stime" size="16" type="text" value="" placeholder="请选择时间" readonly>
+                            <div class="input-group date task_date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                              <input class="form-control task_is_empty task_is_stime" size="16" type="text" value="" placeholder="请选择时间" readonly name="ts_time">
                               <span class="input-group-addon"><span class="glyphicon glyphicon-calendar text-primary"></span></span>
                             </div>
                             <input type="hidden" id="dtp_input2" value="" />
                           </div>
                           <div class="col-md-2 col-sm-2 col-xs-3">
-                            <div class="input-group date task_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                              <input class="form-control task_is_empty task_is_etime" size="16" type="text" value="" placeholder="请选择时间" readonly>
+                            <div class="input-group date task_date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                              <input class="form-control task_is_empty task_is_etime" size="16" type="text" value="" placeholder="请选择时间" readonly name="tf_time">
                               <span class="input-group-addon"><span class="glyphicon glyphicon-calendar text-primary"></span></span>
                               <input type="hidden" id="dtp_input2" value="" />
                             </div>
@@ -377,7 +377,7 @@
                           <div class="col-md-4 col-sm-4 col-xs-4">
                             <div class="input-group">
                                 <input type="text" class="form-control task_is_empty" id="lastname" 
-                                    placeholder="需完成任务">
+                                    placeholder="需完成任务" name="t_content">
                                 <div class="input-group-addon">
                                   <span class="glyphicon glyphicon-tasks text-primary"></span>
                                </div>     
@@ -398,15 +398,15 @@
                       <div class="row task_is_time" style="margin-top: 15px">
                           <label for="lastname" class="col-sm-2 col-md-2 col-xs-12 control-label">阶段任务</label>
                           <div class="col-md-2 col-sm-2 col-xs-3">
-                            <div class="input-group date task_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                              <input class="form-control task_is_empty task_is_stime" size="16" type="text" value="" placeholder="请选择时间" readonly>
+                            <div class="input-group date task_date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                              <input class="form-control task_is_empty task_is_stime" size="16" type="text" value="" placeholder="请选择时间" readonly name="ts_time">
                               <span class="input-group-addon"><span class="glyphicon glyphicon-calendar text-primary"></span></span>
                             </div>
                             <input type="hidden" id="dtp_input2" value="" />
                           </div>
                           <div class="col-md-2 col-sm-2 col-xs-3">
-                            <div class="input-group date task_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                              <input class="form-control task_is_empty task_is_etime" size="16" type="text" value="" placeholder="请选择时间" readonly>
+                            <div class="input-group date task_date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                              <input class="form-control task_is_empty task_is_etime" size="16" type="text" value="" placeholder="请选择时间" readonly name="tf_time">
                               <span class="input-group-addon"><span class="glyphicon glyphicon-calendar text-primary"></span></span>
                               <input type="hidden" id="dtp_input2" value="" />
                             </div>
@@ -414,7 +414,7 @@
                           <div class="col-md-4 col-sm-4 col-xs-4">
                             <div class="input-group">
                                 <input type="text" class="form-control task_is_empty" id="lastname" 
-                                    placeholder="需完成任务">
+                                    placeholder="需完成任务" name="t_content">
                                 <div class="input-group-addon">
                                   <span class="glyphicon glyphicon-tasks text-primary"></span>
                                </div>     
@@ -432,15 +432,15 @@
                       <div class="row task_is_time" style="margin-top: 15px">
                           <label for="lastname" class="col-sm-2 col-md-2 col-xs-12 control-label">阶段任务</label>
                           <div class="col-md-2 col-sm-2 col-xs-3">
-                            <div class="input-group date task_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                              <input class="form-control task_is_empty task_is_stime" size="16" type="text" value="" placeholder="请选择时间" readonly>
+                            <div class="input-group date task_date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                              <input class="form-control task_is_empty task_is_stime" size="16" type="text" value="" placeholder="请选择时间" readonly name="ts_time">
                               <span class="input-group-addon"><span class="glyphicon glyphicon-calendar text-primary"></span></span>
                             </div>
                             <input type="hidden" id="dtp_input2" value="" />
                           </div>
                           <div class="col-md-2 col-sm-2 col-xs-3">
-                            <div class="input-group date task_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                              <input class="form-control task_is_empty task_is_etime" size="16" type="text" value="" placeholder="请选择时间" readonly>
+                            <div class="input-group date task_date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                              <input class="form-control task_is_empty task_is_etime" size="16" type="text" value="" placeholder="请选择时间" readonly name="tf_time">
                               <span class="input-group-addon"><span class="glyphicon glyphicon-calendar text-primary"></span></span>
                               <input type="hidden" id="dtp_input2" value="" />
                             </div>
@@ -448,7 +448,7 @@
                           <div class="col-md-4 col-sm-4 col-xs-4">
                             <div class="input-group">
                                 <input type="text" class="form-control task_is_empty" id="lastname" 
-                                    placeholder="需完成任务">
+                                    placeholder="需完成任务" name="t_content">
                                 <div class="input-group-addon">
                                   <span class="glyphicon glyphicon-tasks text-primary"></span>
                                </div>     
@@ -470,7 +470,7 @@
                             <div class="col-xs-3 col-sm-4 col-md-5"></div>
                             <div class="col-xs-7 col-sm-8 col-md-7">
                               <button  type="button" class="btn btn-primary" id="third_prev_button">上一步</button>
-                              <button type="button" class="btn btn-primary" id="submit">提交申报</button>
+                              <button type="submit" class="btn btn-primary" id="submit">提交申报</button>
                             </div> 
                           </div>
                    </div>
@@ -527,7 +527,20 @@
         forceParse: 0,
         todayBtn: false,
     });
-
+    $('.task_date').datetimepicker({
+        language: 'zh-CN',
+        format: "yyyy-mm-dd",
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0,
+        todayBtn: false,
+        startDate: stime,
+        endDate: etime,
+    });
 
 
 </script> 

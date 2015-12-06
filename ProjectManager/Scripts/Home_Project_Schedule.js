@@ -65,3 +65,4 @@ $(".table_tbody_tr").each(function(){
     var progress_time_judge1 = new progress_time_judge(stime,etime,per_num,that);
     progress_time_judge1.init();
 })
+

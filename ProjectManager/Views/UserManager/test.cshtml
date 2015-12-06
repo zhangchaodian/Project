@@ -19,20 +19,6 @@
                     </tr>
                     </thead>
                     <tbody>
-                   @{
-                       foreach (getDefaultProject_Result projectmodel in projectinfo)
-                       {
-                        <tr>
-                        <td>@projectmodel.p_id.ToString()</td>
-                        <td>@projectmodel.project_group.ToString()</td>
-                        <td>@projectmodel.p_type.ToString()</td>
-                        <td>@projectmodel.p_name.ToString()</td>
-                        <td>@projectmodel.st_name.ToString()</td>
-                        <td>@projectmodel.remark.ToString()</td>
-                        <td>@projectmodel.p_rank.ToString()</td>
-                        <td>@projectmodel.plan_closing_time.ToString()</td>
-                    </tr>
-                          }
-                   }
+                  
                     </tbody>
                 </table>

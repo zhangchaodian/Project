@@ -13,7 +13,7 @@ namespace ProjectManager.DAL
     {
       public User GetUserInfo(string name,string pass)
       {
-          string sql = "select * from [User] where ID=@username and pwd=@pwd;";
+          string sql = "select * from [UserInfo] where ID=@username and pwd=@pwd;";
           SqlParameter[] pars ={ 
                                  new SqlParameter("@username",SqlDbType.NVarChar,32),
                                  new SqlParameter("@pwd",SqlDbType.NVarChar,32),

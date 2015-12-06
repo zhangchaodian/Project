@@ -40,6 +40,7 @@ namespace ProjectManager.BLL
            DAL.UserInfoDAL info = new DAL.UserInfoDAL();
            User user= info.GetUserInfo(name,pass);
            return user;
+           
        }
        #endregion
 

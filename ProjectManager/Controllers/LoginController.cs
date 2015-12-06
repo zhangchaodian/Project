@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using ProjectManager.Common;
+using System.Web.Http;
 
 namespace ProjectManager.Controllers
 {
@@ -11,7 +13,7 @@ namespace ProjectManager.Controllers
     {
         //
         // GET: /Login/
-
+        
         public ActionResult Index()
         {
             return View();
@@ -23,6 +25,9 @@ namespace ProjectManager.Controllers
             string pass=Request["pass"];
             string p_belongs=Request["p_belongs"];
             Session["p_belongs"] = p_belongs.Equals("a") ? "科研项目管理系统" : "质量工程项目管理系统";
+            SessionHelper.Add("p_belongs",p_belongs);
+            SessionHelper.Add("ID",id);
+           
             int result= BLL.UserInfoServer.CheckLogin(id,pass);
            
 
@@ -36,14 +41,17 @@ namespace ProjectManager.Controllers
                 BLL.UserInfoServer server = new BLL.UserInfoServer();
                 Model.User u = server.getUserInfo(id,pass);
                  Session["userinfo"] = u;
+                 SessionHelper.Add("user",u.nickname);
                //a代表管理员 b用户
                 if (result == 0)
                 {
-                    Session["u_type"] = "教职工";
+                    SessionHelper.Add("user_type","教职工");
+                    //Session["u_type"] = "教职工";
                     return Redirect("/usermanager/");
                 }
                 else
                 {
+                    SessionHelper.Add("Indentity","admin");
                     Session["Identity"] = "admin";
                     return Redirect("/usermanager");
                 }
